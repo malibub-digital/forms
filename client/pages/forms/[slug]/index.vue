@@ -1,9 +1,11 @@
 <template>
-  <div
-    id="public-form"
-    data-testid="public-form-page"
-    class="flex flex-col min-h-screen"
-  >
+  <NuxtLayout :name="isIframe ? 'empty' : 'dsml'">
+    <div
+      id="public-form"
+      data-testid="public-form-page"
+      class="flex flex-col min-h-screen"
+    >
+
     <div class="w-full mx-auto flex flex-col grow h-full">
       <div
         v-if="formUnavailable"
@@ -51,7 +53,9 @@
       </template>
     </div>
   </div>
+  </NuxtLayout>
 </template>
+
 
 <script setup>
 import OpenCompleteForm from "~/components/open/forms/OpenCompleteForm.vue"
@@ -394,6 +398,7 @@ useHead({
 })
 
 definePageMeta({
-  layout: 'empty'
+  layout: false
 })
+
 </script>

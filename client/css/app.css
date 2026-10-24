@@ -16,6 +16,8 @@
 @source inline("dark:hover:bg-notion-dark-light");
 @source inline("grid-cols-{1,2,3,4,5,6}");
 
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap");
+
 @theme {
     --color-notion-dark: #191919;
     --color-notion-dark-light: #2e2e2e;
@@ -29,12 +31,22 @@
 
     --color-light-gray: #f8fafc;
 
-    /* Form color variable */
-    --bg-form-color: var(--color-blue-500);
-    --form-color: var(--color-blue-500);
+    /* DSML Official Colors (Design System Mali) */
+    --color-ml-green-500: #0B7A2F;
+    --color-ml-green-600: #0A6428;
+    --color-ml-green-700: #085020;
+    --color-ml-gold-400: #F5C518;
+    --color-ml-gold-500: #EAB308;
+    --color-ml-red-500: #CE2029;
+    --color-ml-red-600: #B4232B;
+
+    /* Form default primary color mapped to Mali National Green */
+    --bg-form-color: #0B7A2F;
+    --form-color: #0B7A2F;
 
     /* Create color utility for form color (enables ring-form, bg-form, etc.) */
     --color-form: var(--form-color, --bg-form-color);
+
 
     /* Custom animations */
     --animate-bounce-slow: bounce-slow 3s ease-in-out infinite;
@@ -392,3 +404,70 @@ body.dark * {
 .crisp-client {
     pointer-events: auto;
 }
+
+/* DSML (Design System Mali) Refinements for Public Forms */
+#public-form {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+#public-form h1,
+#public-form h2,
+#public-form h3,
+#public-form .form-title {
+    font-family: 'Archivo', sans-serif;
+    color: #1A1A16;
+}
+
+/* DSML input borders, focus ring, and subtle radius (6px / s radius) */
+#public-form input[type="text"],
+#public-form input[type="email"],
+#public-form input[type="password"],
+#public-form input[type="tel"],
+#public-form input[type="number"],
+#public-form input[type="url"],
+#public-form input[type="date"],
+#public-form textarea,
+#public-form select {
+    border-color: #DDD4BD !important;
+    border-radius: 6px !important;
+    background-color: #FFFFFF !important;
+    color: #1A1A16 !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+#public-form input:focus,
+#public-form textarea:focus,
+#public-form select:focus {
+    border-color: #0B7A2F !important;
+    box-shadow: 0 0 0 3px #D8EBDC !important;
+    outline: none !important;
+}
+
+/* DSML Submit Button Styling */
+#public-form button[type="submit"],
+#public-form .btn {
+    font-family: 'Archivo', sans-serif !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+    background-color: #0B7A2F !important;
+    color: #FFFFFF !important;
+    letter-spacing: 0.01em !important;
+    padding: 10px 24px !important;
+    box-shadow: 0 1px 3px rgba(30,28,20,0.08) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#public-form button[type="submit"]:hover,
+#public-form .btn:hover {
+    background-color: #0A6428 !important;
+    box-shadow: 0 8px 20px rgba(11,122,47,0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+#public-form button[type="submit"]:active,
+#public-form .btn:active {
+    transform: translateY(0) !important;
+}
+
+

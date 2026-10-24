@@ -1,0 +1,38 @@
+{
+  "name": "forms",
+  "type": "docker-compose",
+  "source": {
+    "type": "git",
+    "repository": "https://github.com/malibub-digital/forms.git",
+    "branch": "prod"
+  },
+  "build": {
+    "composeFile": "docker-compose.yml"
+  },
+  "environment": [
+    {
+      "key": "PORT",
+      "value": "80"
+    },
+    {
+      "key": "APP_ENV",
+      "value": "production"
+    },
+    {
+      "key": "APP_URL",
+      "value": "https://forms.malihub.digital"
+    },
+    {
+      "key": "FRONT_URL",
+      "value": "https://forms.malihub.digital"
+    }
+  ],
+  "ports": [
+    {
+      "containerPort": 80,
+      "hostPort": 80,
+      "protocol": "tcp"
+    }
+  ],
+  "restartPolicy": "unless-stopped"
+}

@@ -22,3 +22,7 @@ client/.env.*
 !api/.env.example
 !client/.env.example
 .help-center-docs/
+
+# Local notes & agent documentation
+.dev/
+

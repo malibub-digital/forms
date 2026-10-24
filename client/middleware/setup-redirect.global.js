@@ -6,8 +6,13 @@ import { unref } from 'vue'
  * Only runs in self-hosted mode when no users exist in database
  */
 export default defineNuxtRouteMiddleware(async (to) => {
-  // Skip redirect for setup page itself and API routes
-  if (to.path.startsWith('/setup') || to.path.startsWith('/api')) {
+  // Skip redirect for setup page itself, API routes, and public forms
+  if (
+    to.path.startsWith('/setup') ||
+    to.path.startsWith('/api') ||
+    to.path.startsWith('/forms/') ||
+    to.name === 'forms-slug'
+  ) {
     return
   }
 
