@@ -44,9 +44,11 @@
       </div>
     </header>
 
-    <!-- Zone Principale du Formulaire -->
-    <main class="flex-grow flex flex-col">
-      <slot />
+    <!-- Zone Principale du Formulaire (DSML Card Layout) -->
+    <main class="flex-grow flex flex-col py-8 px-4 sm:px-6">
+      <div class="w-full max-w-3xl mx-auto bg-white border border-[#EAE3D2] rounded-xl shadow-xs p-6 sm:p-10">
+        <slot />
+      </div>
     </main>
 
     <!-- Footer Institutionnel Mali -->

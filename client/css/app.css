@@ -408,14 +408,35 @@ body.dark * {
 /* DSML (Design System Mali) Refinements for Public Forms */
 #public-form {
     font-family: 'Atkinson Hyperlegible', sans-serif;
+    color: #1A1A16;
 }
 
 #public-form h1,
 #public-form h2,
 #public-form h3,
-#public-form .form-title {
-    font-family: 'Archivo', sans-serif;
-    color: #1A1A16;
+#public-form .form-title,
+#public-form .title {
+    font-family: 'Archivo', sans-serif !important;
+    font-weight: 700 !important;
+    color: #1A1A16 !important;
+    letter-spacing: -0.01em;
+}
+
+#public-form label,
+#public-form .input-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    color: #2D2A26 !important;
+    margin-bottom: 6px !important;
+    display: inline-block;
+}
+
+#public-form .field-help,
+#public-form .input-help,
+#public-form p.text-neutral-500 {
+    font-size: 13px !important;
+    color: #6E695F !important;
 }
 
 /* DSML input borders, focus ring, and subtle radius (6px / s radius) */
@@ -428,11 +449,14 @@ body.dark * {
 #public-form input[type="date"],
 #public-form textarea,
 #public-form select {
-    border-color: #DDD4BD !important;
+    border: 1px solid #DDD4BD !important;
     border-radius: 6px !important;
     background-color: #FFFFFF !important;
     color: #1A1A16 !important;
     font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px !important;
+    padding: 10px 14px !important;
+    box-shadow: 0 1px 2px rgba(30, 28, 20, 0.04) !important;
     transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
 }
 
@@ -444,16 +468,23 @@ body.dark * {
     outline: none !important;
 }
 
+#public-form input::placeholder,
+#public-form textarea::placeholder {
+    color: #9C9689 !important;
+    font-size: 14px !important;
+}
+
 /* DSML Submit Button Styling */
 #public-form button[type="submit"],
 #public-form .btn {
     font-family: 'Archivo', sans-serif !important;
     font-weight: 700 !important;
+    font-size: 15px !important;
     border-radius: 6px !important;
     background-color: #0B7A2F !important;
     color: #FFFFFF !important;
     letter-spacing: 0.01em !important;
-    padding: 10px 24px !important;
+    padding: 11px 26px !important;
     box-shadow: 0 1px 3px rgba(30,28,20,0.08) !important;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
